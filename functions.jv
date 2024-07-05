@@ -1,0 +1,19 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+    const rejectCookiesButton = document.getElementById('reject-cookies');
+    const cookiesBanner = document.getElementById('cookies');
+
+    acceptCookiesButton.addEventListener('click', () => {
+        console.log('Botão de aceitar clicado!'); // Verificação no console
+        // Lógica para aceitar cookies
+        cookiesBanner.style.display = 'none';
+    });
+
+    rejectCookiesButton.addEventListener('click', () => {
+        console.log('Botão de rejeitar clicado!'); // Verificação no console
+        // Lógica para rejeitar cookies
+        cookiesBanner.style.display = 'none';
+    });
+});
+
+
