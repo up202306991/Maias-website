@@ -1,19 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const acceptCookiesButton = document.getElementById('accept-cookies');
-    const rejectCookiesButton = document.getElementById('reject-cookies');
-    const cookiesBanner = document.getElementById('cookies');
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
 
-    acceptCookiesButton.addEventListener('click', () => {
-        console.log('Botão de aceitar clicado!'); // Verificação no console
-        // Lógica para aceitar cookies
-        cookiesBanner.style.display = 'none';
-    });
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // Impede o envio padrão do formulário
 
-    rejectCookiesButton.addEventListener('click', () => {
-        console.log('Botão de rejeitar clicado!'); // Verificação no console
-        // Lógica para rejeitar cookies
-        cookiesBanner.style.display = 'none';
-    });
+  const searchTerm = searchInput.value;
+
+  // Lógica para realizar a pesquisa com o termo searchTerm
+  // (Você precisará implementar essa parte de acordo com a sua estrutura de dados e como você deseja exibir os resultados)
+
+  console.log('Termo de pesquisa:', searchTerm); 
 });
 
+function openSearch() {
+  const searchTerm = document.getElementById('search-input').value;
+  const newUrl = 'resultados.html?search=' + encodeURIComponent(searchTerm); 
+  window.open(newUrl, '_blank');
+}
 
+const filterButton = document.getElementById('filter-button');
+const thoughtBubble = document.getElementById('thought-bubble');
+
+filterButton.addEventListener('click', () => {
+  thoughtBubble.classList.remove('hidden'); 
+  thoughtBubble.classList.add('show');
+  setTimeout(() => {
+    thoughtBubble.classList.remove('show');
+  }, 2000); // Esconde o balão após 2 segundos
+});
