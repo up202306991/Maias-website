@@ -126,35 +126,3 @@ footer {
     text-align: center;
     margin-bottom: 10px;
 }
-
-.cookie-text {
-    font-size: 1.2em;
-    color: #555;
-    text-align: justify;
-}
-
-.cookie-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-.cookie-btn {
-    flex: 1;
-    margin: 0 5px;
-    padding: 10px;
-    font-size: 0.9em;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.cookie-btn#reject-cookies {
-    background-color: #dc3545;
-}
-
-.cookie-btn:hover {
-    opacity: 0.8;
-}
