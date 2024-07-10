@@ -1,30 +1,21 @@
-const searchForm = document.getElementById('search-form');
-const searchInput = document.getElementById('search-input');
+// Obter elementos do DOM
+var floatingIcon = document.getElementById("floating-help-icon");
+var modal = document.getElementById("help-modal");
+var span = document.getElementsByClassName("close")[0];
 
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Impede o envio padrão do formulário
-
-  const searchTerm = searchInput.value;
-
-  // Lógica para realizar a pesquisa com o termo searchTerm
-  // (Você precisará implementar essa parte de acordo com a sua estrutura de dados e como você deseja exibir os resultados)
-
-  console.log('Termo de pesquisa:', searchTerm); 
-});
-
-function openSearch() {
-  const searchTerm = document.getElementById('search-input').value;
-  const newUrl = 'resultados.html?search=' + encodeURIComponent(searchTerm); 
-  window.open(newUrl, '_blank');
+// Quando o usuário clica no ícone, abre o modal
+floatingIcon.onclick = function() {
+    modal.style.display = "block";
 }
 
-const filterButton = document.getElementById('filter-button');
-const thoughtBubble = document.getElementById('thought-bubble');
+// Quando o usuário clica no (x), fecha o modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-filterButton.addEventListener('click', () => {
-  thoughtBubble.classList.remove('hidden'); 
-  thoughtBubble.classList.add('show');
-  setTimeout(() => {
-    thoughtBubble.classList.remove('show');
-  }, 2000); // Esconde o balão após 2 segundos
-});
+// Quando o usuário clica fora do modal, fecha-o
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
