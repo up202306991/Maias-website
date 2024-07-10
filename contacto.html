@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <a href="index.html">
-                <img src="maias.logo.png" alt="Maias Logo">
+                <img src="C:\Users\leite\Desktop\Maias-website\maias.logo.png" alt="Maias Logo">
             </a>
             <nav>
                 <ul>
@@ -72,29 +72,30 @@
         </div>
     </footer>
 
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init('YSuHfN_Lhkj6tZI38');
-    })();
-</script>
-<script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            // these IDs from the previous steps
-            emailjs.sendForm('service_wsz2xxi', 'template_4v7n6tu', this)
-                .then(function() {
-                    console.log('SUCCESS!');
-                    alert('Mensagem enviada com sucesso!');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    alert('Falha ao enviar a mensagem. Por favor, tente novamente.');
-                });
-        });
-    }
-</script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('YSuHfN_Lhkj6tZI38');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_wsz2xxi', 'template_4v7n6tu', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        alert('Mensagem enviada com sucesso!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        alert('Falha ao enviar a mensagem. Por favor, tente novamente.');
+                    });
+            });
+        }
+    </script>
 
     <!-- Modal de ajuda -->
 <!-- Ícone de ajuda flutuante -->
@@ -117,4 +118,7 @@
     </div>
 </div>
 </body>
+
+<script src="functions.js"></script>
+
 </html>
