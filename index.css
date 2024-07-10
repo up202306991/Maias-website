@@ -126,6 +126,7 @@ footer {
     text-align: center;
     margin-bottom: 10px;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -257,7 +258,7 @@ header nav li {
     right: 50px;  /* Adjusted for more spacing */
     background-color: #0077be;
     color: white;
-    width: 70px;   /* Smaller size for better fit */
+    width: 80px;   /* Smaller size for better fit */
     height: 80px;  /* Smaller size for better fit */
     border-radius: 50%;
     display: flex;
