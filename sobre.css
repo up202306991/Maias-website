@@ -134,34 +134,126 @@ footer {
     margin-bottom: 10px;
 }
 
-.cookie-text {
-    font-size: 0.9em;
-    color: #555;
-    text-align: justify;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.cookie-buttons {
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header responsivo */
+header {
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.cookie-btn {
-    flex: 1;
-    margin: 0 5px;
-    padding: 10px;
-    font-size: 0.9em;
-    color: white;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+header img {
+    max-height: 50px;
 }
 
-.cookie-btn#reject-cookies {
-    background-color: #dc3545;
+header nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.cookie-btn:hover {
-    opacity: 0.9;
+header nav li {
+    margin-left: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    header nav li {
+        margin: 0 10px;
+    }
+
+    #showcase h1 {
+        font-size: 40px;
+    }
+
+    #showcase p {
+        font-size: 18px;
+    }
+
+    #boxes .container {
+        flex-direction: column;
+    }
+
+    #boxes .box {
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    /* Ajustes para a página de contato */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+}
+
+/* Ajustes adicionais para telas muito pequenas */
+@media (max-width: 480px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav li {
+        margin: 10px 0;
+    }
+
+    #showcase h1 {
+        font-size: 30px;
+    }
+
+    #showcase p {
+        font-size: 16px;
+    }
 }
