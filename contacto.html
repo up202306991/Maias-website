@@ -6,17 +6,18 @@
     <title>Maias - Seguros & Contabilidade - Contacto</title>
     <link rel="icon" type="image/x-icon" href="maias.web.png"> 
     <link rel="stylesheet" href="contacto.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="index.html">
+            <a href="main.html">
                 <img src="maias.logo.png" alt="Maias Logo">
             </a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="main.html">Home</a></li>
                     <li><a href="serviços.html">Serviços</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
@@ -33,7 +34,7 @@
                     <h2>Informações de Contacto</h2>
                     <p><i class="fas fa-phone"></i> Telefone: (11) 1234-5678</p>
                     <p><i class="fas fa-envelope"></i> Email: contato@maias.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua de Costa Cabral 990, 4200-224 Porto, Portugal</p>
                     
                     <h3>Departamentos:</h3>
                     <p>Seguros: seguros@maias.com</p>
@@ -52,7 +53,7 @@
             </div>
             <div class="map-container">
                 <h2>Nossa Localização</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.3217777680984!2d-8.145735023424802!3d41.32361579994758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24eab1efd04f7d%3A0x12581e2d5a00c169!2sMaias%20-%20Seguros%20e%20Contabilidade!5e0!3m2!1spt-PT!2spt!4v1720637145575!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.2587860034644!2d-8.622921023460123!3d41.15659647132259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2464e6d82aff1d%3A0x2ed8aacc14723cf0!2sR.%20de%20Costa%20Cabral%20990%2C%204200-224%20Porto!5e0!3m2!1sen!2spt!4v1689006824059!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </main>
@@ -60,31 +61,46 @@
     <footer>
         <div class="container footer-content">
             <div class="social-icons">
-                <a href="https://www.facebook.com/segurosmaias?locale=pt_PT"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="footer-info">
+            <div class="contact-info">
                 <p>Telefone: (11) 1234-5678</p>
                 <p>Email: contato@maias.com</p>
             </div>
         </div>
     </footer>
 
+    <!-- Ícone de ajuda flutuante -->
+    <div id="floating-help-icon" class="floating-help-icon">
+        <i class="fas fa-question-circle"></i>
+    </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Modal de ajuda -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajuda</h2>
+            <p>Bem-vindo à Maias Seguros & Contabilidade! Como podemos ajudar?</p>
+            <ul>
+                <li>Para informações sobre nossos serviços de seguros, clique em "Serviços" no menu.</li>
+                <li>Para saber mais sobre nossa empresa, visite a página "Sobre".</li>
+                <li>Se precisar entrar em contato, use o formulário nesta página "Contacto".</li>
+                <li>Tem alguma dúvida específica? Não hesite em nos ligar ou enviar um e-mail!</li>
+            </ul>
+        </div>
+    </div>
+
     <script type="text/javascript">
         (function() {
-            // https://dashboard.emailjs.com/admin/account
-            emailjs.init('YSuHfN_Lhkj6tZI38');
+            emailjs.init("YSuHfN_Lhkj6tZI38");
         })();
-    </script>
-    <script type="text/javascript">
+
         window.onload = function() {
             document.getElementById('contact-form').addEventListener('submit', function(event) {
                 event.preventDefault();
-                // these IDs from the previous steps
                 emailjs.sendForm('service_wsz2xxi', 'template_4v7n6tu', this)
                     .then(function() {
                         console.log('SUCCESS!');
@@ -94,31 +110,26 @@
                         alert('Falha ao enviar a mensagem. Por favor, tente novamente.');
                     });
             });
+
+            // Código para o ícone de ajuda flutuante
+            var floatingIcon = document.getElementById("floating-help-icon");
+            var modal = document.getElementById("help-modal");
+            var span = document.getElementsByClassName("close")[0];
+
+            floatingIcon.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
         }
     </script>
-
-    <!-- Modal de ajuda -->
-<!-- Ícone de ajuda flutuante -->
-<div id="floating-help-icon" class="floating-help-icon">
-    <i class="fas fa-question-circle"></i>
-</div>
-
-<!-- Modal de ajuda -->
-<div id="help-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Ajuda</h2>
-        <p>Bem-vindo à Maias Seguros & Contabilidade! Como podemos ajudar?</p>
-        <ul>
-            <li>Para informações sobre nossos serviços de seguros, clique em "Serviços" no menu.</li>
-            <li>Para saber mais sobre nossa empresa, visite a página "<a href="sobre.html">Sobre</a>".</li>
-            <li>Se precisar entrar em contato, use o formulário na página "<a href="contacto.html">Contacto</a>".</li>
-            <li>Tem alguma dúvida específica? Não hesite em nos ligar ou enviar um e-mail!</li>
-        </ul>
-    </div>
-</div>
 </body>
-
-<script src="functions.js"></script>
-
 </html>
